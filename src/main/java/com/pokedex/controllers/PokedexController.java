@@ -17,11 +17,13 @@ public class PokedexController {
 
     @RequestMapping(value = "")
     public String homePage() {
+        System.out.println("Home Page Endpoint");
         return "home_page";
     }
 
     @RequestMapping("pokedex")
     public String displayFullPokedex(Model model) {
+        System.out.println("Full Pokedex Endoint");
         model.addAttribute("pokedex", pokemonRepository.findAll());
         return "pokedex/pokedex";
     }

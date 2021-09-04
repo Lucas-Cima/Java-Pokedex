@@ -29,7 +29,11 @@ public class WhoDatController {
 
     @RequestMapping("random")
     public String displayRandomPokemon(Model model) {
-        model.addAttribute("pokedex", randomPokemon());
+        Pokemon randPoke = randomPokemon();
+        String name = randPoke.getPokemon_name();
+        model.addAttribute("pokedex", randPoke);
+        System.out.println("Random Pokemon Endpoint. Pokemon: " + name);
+
         return "pokedex/pokemon";
     }
 
