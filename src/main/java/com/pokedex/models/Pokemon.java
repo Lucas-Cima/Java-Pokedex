@@ -1,43 +1,97 @@
 package com.pokedex.models;
 
-public class Cheese {
-    private int cheeseId;
-    private static int nextId =1;
-    private String name;
-    private String description;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-    public Cheese(String name, String description) {
-        this();
-        this.name = name;
-        this.description = description;
+@Entity
+public class Pokemon {
+
+    @Id
+    private int pokemon_id;
+    private int national_dex_number;
+    private String pokemon_name;
+    private String form;
+    private String primary_type;
+    private String secondary_type;
+    private String species;
+    private String region;
+    private String height;
+    private String weight;
+    private String dex_entry;
+    private int hp;
+    private int attack;
+    private int defense;
+    private int special_attack;
+    private int special_defense;
+    private int speed;
+
+    public Pokemon() {}
+
+    public int getId() {
+        return pokemon_id;
     }
 
-    public Cheese() {
-        cheeseId = nextId;
-        nextId++;
+    public int getNational_dex_number() {
+        return national_dex_number;
     }
 
-    public int getCheeseId() {
-        return cheeseId;
+    public String getPokemon_name() {
+        return pokemon_name;
     }
 
-    public void setCheeseId(int cheeseId) {
-        this.cheeseId = cheeseId;
+    public String getForm() {
+        return form;
     }
 
-    public String getName() {
-        return name;
+    public String getPrimary_type() {
+        return primary_type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getSecondary_type() {
+        return secondary_type;
     }
 
-    public String getDescription() {
-        return description;
+    public String getSpecies() {
+        return species;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getRegion() {
+        return region;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public String getDex_entry() {
+        return dex_entry;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getSpecial_attack() {
+        return special_attack;
+    }
+
+    public int getSpecial_defense() {
+        return special_defense;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 }

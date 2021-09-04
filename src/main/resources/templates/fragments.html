@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8" />
-    <title></title>
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+
+<nav th:fragment="navigation">
+    <a href="/">Home</a> |
+    <a href="/pokedex">Full Pokedex</a> |
+    <a href="/random">Random Pokemon(in progress)</a>
+</nav>
+
+
+<table th:fragment="table" class="table table-striped">
+    <thead>
+    <tr>
+        <th>National Dex Number</th>
+        <th>Name</th>
+        <th>Form</th>
+        <th>Primary Type</th>
+        <th>Secondary Type</th>
+        <th>Species</th>
+        <th>Region</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Pokedex Entry</th>
+        <th>Heath</th>
+        <th>Attack</th>
+        <th>Defense</th>
+        <th>Special Attack</th>
+        <th>Special Defense</th>
+        <th>Speed</th>
+    </tr>
+    </thead>
+    <tr th:each="pokemon : ${pokedex}">
+        <td th:text="${pokemon.national_dex_number}"></td>
+        <td th:text="${pokemon.pokemon_name}"></td>
+        <td th:text="${pokemon.form}"></td>
+        <td th:text="${pokemon.primary_type}"></td>
+        <td th:text="${pokemon.secondary_type}"></td>
+        <td th:text="${pokemon.species}"></td>
+        <td th:text="${pokemon.region}"></td>
+        <td th:text="${pokemon.height}"></td>
+        <td th:text="${pokemon.weight}"></td>
+        <td th:text="${pokemon.dex_entry}"></td>
+        <td th:text="${pokemon.hp}"></td>
+        <td th:text="${pokemon.attack}"></td>
+        <td th:text="${pokemon.defense}"></td>
+        <td th:text="${pokemon.special_attack}"></td>
+        <td th:text="${pokemon.special_defense}"></td>
+        <td th:text="${pokemon.speed}"></td>
+    </tr>
+</table>
 
 </body>
 </html>
