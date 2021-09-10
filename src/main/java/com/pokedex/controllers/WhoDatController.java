@@ -37,4 +37,26 @@ public class WhoDatController {
         return "pokedex/pokemon";
     }
 
+    @RequestMapping("whoisthat")
+    public String whoIsThatPokemon() {
+        System.out.println("Who is That Endpoint");
+        return "whoisthat/home";
+    }
+
+    @RequestMapping("whoisthateasy")
+    public String displayWhoIsThatPokemonEasy(Model model) {
+        Pokemon correctPoke = randomPokemon();
+        Pokemon optA = randomPokemon();
+        Pokemon optB = randomPokemon();
+        Pokemon optC = randomPokemon();
+        model.addAttribute("correctPoke", correctPoke);
+        model.addAttribute("optA", optA);
+        model.addAttribute("optB", optB);
+        model.addAttribute("optC", optC);
+        String correctPokeName = correctPoke.getPokemon_name();
+        System.out.println("Who is That Easy: " + correctPokeName);
+
+        return"whoisthat/easy";
+    }
+
 }

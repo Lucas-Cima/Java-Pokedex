@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container body-content">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+
+<section class="card">
+    <div class="card-content">
+        <div class="Heading">
+            Primary Type:
+            <span th:text="${correctPoke.primary_type}"></span>
+            <br/>
+            Secondary Type:
+            <span th:text="${correctPoke.secondary_type}"></span>
+            <br/>
+            Species:
+            <span th:text="${correctPoke.species}"></span>
+            <br/>
+            Region of Origin:
+            <span th:text="${correctPoke.region}"></span>
+            <br/>
+        </div>
+        <div class="Specs">
+            Height:
+            <span th:text="${correctPoke.height}"></span>
+            <br/>
+            Weight:
+            <span th:text="${correctPoke.weight}"></span>
+            <br/>
+        </div>
+        <div class="PkdxText">
+            Pokedex Entry:
+            <div th:text="${correctPoke.dex_entry}"></div>
+        </div>
+    </div>
+</section>
+<form>
+    <label th:text="${correctPoke.pokemon_name}"></label>
+    <input type="submit">
+</form>
+<form>
+    <label th:text="${optA.pokemon_name}"></label>
+    <input type="submit">
+</form>
+<form>
+    <label th:text="${optB.pokemon_name}"></label>
+    <input type="submit">
+</form>
+<form>
+    <label th:text="${optC.pokemon_name}"></label>
+    <input type="submit">
+</form>
+
+
+</body>
+</html>

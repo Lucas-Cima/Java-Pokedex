@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container body-content">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<center>
+    <h1>"Who Is That Pokemon"</h1>
+    <h3>Difficulty Options:</h3>
+    <form action="/pokemon/whoisthateasy">
+        <label>Easy:</label>
+        <input type="submit">
+    </form>
+<!--    <form action="/whodatmedium" method="GET">-->
+<!--        <label>Medium</label>-->
+<!--        <input type="submit">-->
+<!--    </form>-->
+<!--    <form action="/whodathard" method="GET">-->
+<!--        <label>Hard</label>-->
+<!--        <input type="submit">-->
+<!--    </form>-->
+</center>
+</body>
+</html>

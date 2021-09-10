@@ -5,15 +5,25 @@
     <title th:text="${title}"></title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <style>
+        .card {
+            padding: 5px 5px 5px 5px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 50%;
+        }
+        .card-content {
+            padding: 2px 16px;
+        }
+        </style>
 </head>
 <body>
 
 <nav th:fragment="navigation">
     <a href="/">Home</a> |
     <a href="/pokedex">Full Pokedex</a> |
-    <a href="/pokemon/random">Random Pokemon(in progress)</a>
+    <a href="/pokemon/random">Random</a> |
+    <a href="/pokemon/whoisthat">Who Is That Pokemon</a>
 </nav>
 
 
