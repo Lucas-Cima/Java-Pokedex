@@ -37,21 +37,17 @@
         </div>
     </div>
 </section>
-<form>
-    <label th:text="${correctPoke.pokemon_name}"></label>
-    <input type="submit">
-</form>
-<form>
-    <label th:text="${optA.pokemon_name}"></label>
-    <input type="submit">
-</form>
-<form>
-    <label th:text="${optB.pokemon_name}"></label>
-    <input type="submit">
-</form>
-<form>
-    <label th:text="${optC.pokemon_name}"></label>
-    <input type="submit">
+
+
+<form method="POST">
+    <select th:name="sub">
+        <option th:text="${correctPoke.pokemon_name}" th:value="${correctPoke.pokemon_name}"></option>
+        <option th:text="${optA.pokemon_name}" th:value="${optA.pokemon_name}"></option>
+        <option th:text="${optB.pokemon_name}" th:value="${optB.pokemon_name}"></option>
+        <option th:text="${optC.pokemon_name}" th:value="${optC.pokemon_name}"></option>
+    </select>
+
+    <button type="submit" th:name="correctpoke" th:value="${correctPoke.pokemon_name}">Select</button>
 </form>
 
 
